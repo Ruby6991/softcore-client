@@ -33,6 +33,7 @@ class Assign extends Component {
             dateCheck:new Date()
         }
         console.log(data);
+    
         axios.post("http://localhost:3000/bookings/perday",data)
         .then(function(res){
             
@@ -133,17 +134,16 @@ class Assign extends Component {
             assignedBookings:assignedBookings
         }
         
-        //for loop for all bookings
         axios.put("http://localhost:3000/bookings/update",bookingData)
         .then(function(res){
-            console.log("Booking assigned successfully!");
-            alert("Booking assigned successfully!");
+            console.log("Bookings assigned successfully!");
+            alert("Bookings assigned successfully!");
             that.setState({
                 isAssignmentComplete:true
             })
         }).catch(function(error){
-            console.log("Booking creation un-successful!\nError : ",error.response);
-            alert("Booking creation un-successful!");
+            console.log("Booking assignment un-successful!\nError : ",error.response);
+            alert("Booking assignment un-successful!");
         })
       
     }
@@ -198,7 +198,7 @@ class Assign extends Component {
                             </tbody>
                         </table>
                         <br/>
-                        <button className="reserve-btn" type="button" onClick={this.handleSubmit}>Update</button>
+                        <button className="reserve-btn" type="button" onClick={this.handleSubmit}>Assign</button>
                     </form>
                 </div>
                 <Footer/>

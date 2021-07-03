@@ -5,7 +5,6 @@ import Footer from '../layout/Footer'
 import Calendar from 'react-calendar'
 import 'react-calendar/dist/Calendar.css';
 import TimeKeeper from 'react-timekeeper';
-import { Redirect } from "react-router-dom";
 const axios = require("axios")
 
 class CreateBooking extends Component {
@@ -61,17 +60,6 @@ class CreateBooking extends Component {
             endTime: time.formatted24
         })
     }
-     
-    convertTo24Hour(time) {
-        var hours = parseInt(time.substr(0, 2));
-        if(time.indexOf('am') != -1 && hours == 12) {
-            time = time.replace('12', '0');
-        }
-        if(time.indexOf('pm')  != -1 && hours < 12) {
-            time = time.replace(hours, (hours + 12));
-        }
-        return time.replace(/(am|pm)/, '');
-    }
 
     handleSubmit = (e) => {
         e.preventDefault();
@@ -80,6 +68,7 @@ class CreateBooking extends Component {
         let pickTime=this.state.startTime.split(":");
         let dropTime=this.state.endTime.split(":");
 
+        //Appointment can only be made during working hours
         if(pickTime[0]<8 || pickTime[0]>18){
             alert("Please Pick a Start Time between 8.00 a.m. and 6.00 p.m.");
             return;

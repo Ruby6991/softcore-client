@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import Moment from 'react-moment';
-import { Redirect } from "react-router-dom";
 const axios = require("axios")
 
 class BookingReceipt extends Component {
@@ -86,7 +85,8 @@ class BookingReceipt extends Component {
                         </div>
                         <div class="card-action">
                         {
-                        //cancellation can be done only 12 Hrs before the actual service start time
+                        /*cancellation can be done only 12 Hrs before the actual service start time 
+                        && if it's a pending appointment*/
                         (Math.abs(this.state.currentDate - new Date(this.state.startTime)) / 36e5>12 
                             && this.state.status==="pending" )?(
                             <button id="edit-btn" onClick={this.handleCancel}>Cancel</button>

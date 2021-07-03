@@ -67,32 +67,6 @@ class Bookings extends Component {
         })
     }
 
-    // handleHeavyFilter = () => {   
-        // const allBookings = this.state.bookings;
-
-        // const heavyBookings = allBookings.filter(function (e) {
-        //     return e.vehicleType === 'HEAVY';
-        // });
-        // console.log(heavyBookings);
-        // this.setState({
-        //     filteredBookings:heavyBookings,
-        //     view:false
-        // })
-    // }
-
-    // handleLightFilter = () => {   
-    //     const allBookings = this.state.bookings;
-
-    //     const lightBookings = allBookings.filter(function (e) {
-    //         return e.vehicleType === 'LIGHT';
-    //     });
-    //     console.log(allBookings);
-    //     this.setState({
-    //         filteredBookings:lightBookings,
-    //         view:false
-    //     })
-    // }
-
     render(){
         return (
             <div>
@@ -102,8 +76,6 @@ class Bookings extends Component {
                    ):("")}
                 <div className="bookings-history">
                     <h1>Bookings </h1>
-                    {/* <button id="edit-btn" onClick={this.handleHeavyFilter}>Heavy Vehicle Bookings</button>
-                    <button id="edit-btn" onClick={this.handleLightFilter}>Light Vehicle Bookings</button> */}
                     <Select options={ filterOptions } onChange={this.handleFilterChange} placeholder="Filter By"/>
                     <Select options={ sortOptions } onChange={this.handleSortChange} placeholder="Sort By"/>
 
