@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-// import { Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 class SignInAndJoin extends Component {
     constructor(props){
@@ -62,6 +62,7 @@ class SignInAndJoin extends Component {
 
             localStorage.setItem("token",data.token);
             localStorage.setItem("email",that.state.email);
+            localStorage.setItem("userType",data.userType);
             that.setState({
                 redirectToHome:true
             })
@@ -93,14 +94,15 @@ class SignInAndJoin extends Component {
 
         const that = this;
         if(user.firstName!=='' && user.lastName!=='' && user.email!=='' && user.password!==''){
-            axios.post("http://localhost:3000/users/Register",user)
+            axios.post("http://localhost:3000/users/register",user)
             .then(function(res){
                 alert("Registered Successfully!");
                 console.log(login);
                 axios.post("http://localhost:3000/users/authenticate",login)
                 .then(function(res){
-                    localStorage.setItem("token",res.data.jwtToken);
+                    localStorage.setItem("token",res.data.token);
                     localStorage.setItem("email",that.state.email);
+                    localStorage.setItem("userType",res.data.userType);
                     that.setState({
                         redirectToHome:true
                     })
@@ -117,11 +119,11 @@ class SignInAndJoin extends Component {
     render() {
         return (
             <div className="outer-container">
-                {/* {
+                {
                    this.state.redirectToHome?(
-                       <Redirect to="/dashboard"/>
+                       <Redirect to="/createBooking"/>
                    ):("")
-                } */}
+                }
                 <div class="container-starter" id="container">
                     <div class="form-container sign-up-container">
                         <form onSubmit={this.handleSubmitSignUp} >
@@ -145,12 +147,12 @@ class SignInAndJoin extends Component {
                         <div class="overlay">
                             <div class="overlay-panel overlay-left">
                                 <h1>Welcome Back!</h1>
-                                <p>To stay connected with us please login with your personal info</p>
+                                <p>Login and start making appointments to service your vehicles</p>
                                 <button class="ghost" id="signIn">Sign In</button>
                             </div>
                             <div class="overlay-panel overlay-right">
-                                <h1>Hello, Friend!</h1>
-                                <p>Enter your personal details and start your journey with us</p>
+                                <h1>SoftCore motors</h1>
+                                <p>New Here? Sign up with us to make appointments to service your vehicles</p>
                                 <button class="ghost" id="signUp">Sign Up</button>
                             </div>
                         </div>

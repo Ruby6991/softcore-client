@@ -225,3 +225,262 @@ code {
   height: 40px;
   width: 40px;
 }
+
+/*Nav bar styles*/
+.App .nav {
+  background-color: #212121;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  font-family: var(--mainFontBold);
+}
+@media screen and (max-width: 670px) {
+  .App .nav .material-icons {
+    display: none;
+  }
+}
+
+/*Footer styles*/
+.App .page-footer {
+  background-color: #212121;
+}
+
+/*Booking Page Styles*/
+.App .booking-details *,
+.App .booking-details *:before,
+.App .booking-details *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.App .booking-details {
+  font-family: "Nunito", sans-serif;
+  background: linear-gradient(
+    to bottom left,
+    #212121 40%,
+    var(--mainDarkBlue) 100%
+  );
+}
+.App .booking-details form {
+  max-width: 500px;
+  margin: 10px auto;
+  padding: 10px 20px;
+  background: #f4f7f8;
+  border-radius: 8px;
+}
+.App .booking-details h1 {
+  margin: 0 0 30px 0;
+  text-align: center;
+  font-size: 36px;
+}
+.App .booking-details input[type="text"],
+.App .booking-details input[type="password"],
+.App .booking-details input[type="date"],
+.App .booking-details input[type="datetime"],
+.App .booking-details input[type="email"],
+.App .booking-details input[type="number"],
+.App .booking-details input[type="time"] .App .booking-details select {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  height: 20px;
+  margin: 0;
+  outline: 0;
+  padding: 15px;
+  width: 100%;
+  background-color: #e8eeef;
+  color: #8a97a0;
+  -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+  margin-bottom: 30px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+.App .booking-details input[type="text"],
+.App .booking-details input[type="password"],
+.App .booking-details input[type="email"],
+.App .booking-details input[type="date"] {
+  border-top: 2px solid #d2d9dd;
+}
+.App .booking-details input[type="text"]:focus,
+.App .booking-details input[type="password"]:focus,
+.App .booking-details input[type="email"]:focus,
+.App .booking-details input[type="date"]:focus {
+  background: #d2d9dd;
+  border-radius: 30px;
+  border-top: none;
+}
+.App .booking-details select {
+  padding: 6px;
+  height: 32px;
+  border-radius: 2px;
+}
+.App .booking-details .reserve-btn {
+  position: relative;
+  display: block;
+  padding: 19px 39px 18px 39px;
+  color: #fff;
+  margin: 0 auto;
+  background: linear-gradient(
+    to bottom left,
+    #212121 40%,
+    var(--mainDarkBlue) 100%
+  );
+  font-size: 18px;
+  text-align: center;
+  font-style: normal;
+  width: 100%;
+  border: 1px solid var(--mainDarkBlue);
+  border-width: 1px 1px 3px;
+  margin-bottom: 10px;
+  transition: 0.4s;
+}
+.App .booking-details .reserve-btn:hover {
+  color: var(--mainDarkBlue);
+  width: 70%;
+  border-radius: 30px;
+  background: transparent;
+  border-width: 2px 2px 3px;
+  border-color: var(--mainDarkBlue);
+  cursor: pointer;
+}
+.App .booking-details .field-sets {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.App .booking-details fieldset {
+  margin-left: 30px;
+  margin-bottom: 30px;
+  border: none;
+}
+.App .booking-details .field-sets .row-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.App .booking-details .field-sets .row-info .row {
+  width: 100%;
+  padding-right: 50px;
+}
+.App .booking-details legend {
+  font-size: 1.4em;
+  margin-bottom: 10px;
+}
+.App .booking-details label {
+  display: block;
+  margin-bottom: 8px;
+}
+.App .booking-details label.light {
+  font-weight: 300;
+  display: inline;
+}
+.App .booking-details .number {
+  background: linear-gradient(
+    to bottom left,
+    #212121 40%,
+    var(--mainDarkBlue) 100%
+  );
+  color: #fff;
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+  font-size: 0.8em;
+  margin-right: 4px;
+  line-height: 30px;
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+  border-radius: 8px 5px 8px 20px;
+}
+@media screen and (min-width: 480px) {
+  form {
+    max-width: 480px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .App .booking-details form {
+    max-width: 960px;
+  }
+  .App .booking-details fieldset {
+    position: relative;
+    float: left;
+    width: 45%;
+  }
+  .App .booking-details fieldset .addresses {
+    width: 54%;
+    float: right;
+  }
+}
+@media screen and (max-width: 670px) {
+  .App .booking-details .field-sets {
+    flex-direction: column;
+  }
+  .App .booking-details input[type="text"],
+  .App .booking-details input[type="password"],
+  .App .booking-details input[type="email"],
+  .App .booking-details input[type="date"] {
+    padding-right: 3px;
+  }
+}
+.App .booking-details .field-sets table {
+  margin-bottom: 20px;
+}
+.App .booking-details .field-sets .table-row:hover {
+  background: linear-gradient(
+    to bottom left,
+    #212121 40%,
+    var(--mainDarkBlue) 100%
+  );
+  color: #fff;
+  cursor: pointer;
+}
+.App .booking-details .field-sets table > tbody > tr > td {
+  padding-right: 25px;
+}
+
+/*Bookings History Styles*/
+.App .bookings-history {
+  text-align: center;
+  display: block;
+  margin: 60px auto;
+  background: linear-gradient(
+    to bottom left,
+    white 40%,
+    var(--mainDarkBlue) 100%
+  );
+  box-shadow: 0 5px 40px rgba(0, 0, 0, 0.2);
+  width: 35%;
+}
+.App .bookings-history h1 {
+  font-size: 36px;
+  font-family: var(--mainFontLight);
+  color: black;
+  padding: 15px;
+}
+#edit-btn {
+  box-sizing: border-box;
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid #212121;
+  border-radius: 0.6em;
+  color: #212121;
+  cursor: pointer;
+  display: flex;
+  align-self: center;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1;
+  margin: 10px;
+  padding: 0.6em 1.4em;
+  text-decoration: none;
+  text-align: center;
+  font-family: var(--mainFontLight);
+  font-weight: 700;
+  transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+}
+#edit-btn:hover {
+  box-shadow: 0 0 40px 40px #212121 inset;
+  color: white;
+}
